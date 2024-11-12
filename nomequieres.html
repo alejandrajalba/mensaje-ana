@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>¿Estás seguro?</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            flex-direction: column;
+            font-family: Arial, sans-serif;
+            background-color: #ffe6e6;
+            text-align: center;
+        }
+        h1 {
+            font-size: 24px;
+            color: #333;
+        }
+        button {
+            padding: 10px 20px;
+            font-size: 18px;
+            margin-top: 20px;
+            cursor: pointer;
+            background-color: #f44336;
+            color: white;
+            border: none;
+            border-radius: 5px;
+        }
+        button:hover {
+            background-color: #d32f2f;
+        }
+        img {
+            display: none;
+            margin-top: 20px;
+            max-width: 80%;
+            height: auto;
+            border-radius: 10px;
+        }
+    </style>
+</head>
+<body>
+    <h1>¿Estás seguro?</h1>
+    <button onclick="mostrarImagen()">Seguro?</button>
+    <img id="imagen-sorpresa" src="URL_DE_TU_IMAGEN_2_AQUI" alt="Imagen sorpresa">
+    
+    <script>
+        function mostrarImagen() {
+            document.getElementById('imagen-sorpresa').style.display = 'block';
+        }
+    </script>
+</body>
+</html>
