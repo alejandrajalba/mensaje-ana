@@ -42,13 +42,15 @@
     </style>
 </head>
 <body>
-    <h1>¿Estás segura?</h1>
-    <button onclick="mostrarImagen()">Pulsa aquí entonces traidora</button>
+    <h1 id="titulo">¿Estás segura?</h1>
+    <button id="boton" onclick="mostrarImagen()">Pulsa aquí entonces traidora</button>
     <img id="imagen-sorpresa" src="https://github.com/alejandrajalba/mensaje-ana/blob/main/gato%20triste.jpg?raw=true" alt="ok">
     
     <script>
         function mostrarImagen() {
             document.getElementById('imagen-sorpresa').style.display = 'block';
+            document.getElementById('titulo').style.display = 'none';
+            document.getElementById('boton').style.display = 'none';
         }
     </script>
 </body>
