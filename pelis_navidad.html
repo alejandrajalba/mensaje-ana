@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Películas de Navidad</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            flex-direction: column;
+            font-family: Arial, sans-serif;
+            background-color: #fff8e1;
+            text-align: center;
+        }
+        button {
+            padding: 15px 30px;
+            font-size: 20px;
+            margin: 20px;
+            cursor: pointer;
+            border-radius: 5px;
+            border: none;
+        }
+        #netflix-btn {
+            background-color: red;
+            color: black;
+        }
+        #prime-btn {
+            background-color: blue;
+            color: white;
+        }
+    </style>
+</head>
+<body>
+    <h1>Elige tu servicio de películas</h1>
+    <button id="netflix-btn" onclick="location.href='netflix.html'">Netflix</button>
+    <button id="prime-btn" onclick="location.href='prime.html'">Prime Video</button>
+</body>
+</html>

@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Películas de Navidad - Netflix</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f7f7f7;
+            margin: 0;
+            padding: 0;
+        }
+        .movie-list {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin-top: 20px;
+        }
+        .movie-item {
+            display: flex;
+            align-items: center;
+            margin: 15px;
+        }
+        .movie-item input[type="checkbox"] {
+            margin-left: 20px;
+            cursor: pointer;
+        }
+        .movie-item h2 {
+            margin-right: 10px;
+            font-size: 20px;
+            color: #333;
+        }
+        .movie-item p {
+            font-size: 14px;
+            color: #666;
+        }
+    </style>
+</head>
+<body>
+    <h1 style="text-align: center; padding-top: 20px;">Películas de Navidad en Netflix</h1>
+    <div class="movie-list">
+        <div class="movie-item">
+            <h2>LA ESTACIÓN DE LA FELICIDAD (es de lesbianas lol)</h2>
+            <p>Abby que se propone pedirle matrimonio a Harper durante una reunión navideña, se topa con un problema cuando ella le revela que su familia no sabe que son lesbianas.</p>
+            <input type="checkbox" id="movie1" onclick="toggleCheck('movie1')">
+        </div>
+        <div class="movie-item">
+            <h2>-	EL CALENDARIO DE NAVIDAD (la prota es la bruja de los vampirikiki, la quiero ver)</h2>
+            <p>Una fotógrafa con talento estancada en un trabajo sin futuro hereda un antiguo calendario de adviento que parece predecir el futuro e indicar el rumbo hacia el amor.</p>
+            <input type="checkbox" id="movie2" onclick="toggleCheck('movie2')">
+        </div>
+        <div class="movie-item">
+            <h2>CAMBIO DE PRINCESA (hay 3 películas de esto wtf)</h2>
+            <p>Una panadera de Chicago cambia de vida con una princesa idéntica a ella.</p>
+            <input type="checkbox" id="movie3" onclick="toggleCheck('movie3')">
+        </div>
+        <div class="movie-item">
+            <h2>KLAUS (nominada al óscar, es de dibus)</h2>
+            <p>Un cartero egoísta y un juguetero huraño forjan una amistad muy especial, que sembrará la alegría en un pueblo frío y oscuro.</p>
+            <input type="checkbox" id="movie4" onclick="toggleCheck('movie4')">
+        </div>
+    </div>
+    
+    <script>
+        function toggleCheck(movieId) {
+            const checkbox = document.getElementById(movieId);
+            if (checkbox.checked) {
+                checkbox.parentElement.style.backgroundColor = "#d3ffd3"; // Marca como visto
+            } else {
+                checkbox.parentElement.style.backgroundColor = ""; // Desmarca
+            }
+        }
+    </script>
+</body>
+</html>
