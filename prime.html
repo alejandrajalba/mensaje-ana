@@ -42,7 +42,7 @@
     <h1 style="text-align: center; padding-top: 20px;">Películas de Navidad en Prime Video</h1>
     <div class="movie-list">
         <div class="movie-item">
-            <h2>-	TUS NAVIDADES O LAS MÍAS (me parece divertidísima).</h2>
+            <h2>TUS NAVIDADES O LAS MÍAS (me parece divertidísima).</h2>
             <p>Es la víspera de Nochebuena, Hayley y James se despiden en la estación de Marlyebone. En el último momento ambos deciden darle una sorpresa al otro e intercambian sus trenes. La nieve comienza a caer en forma gran nevada lo que provoca que cada uno quede atrapado con la familia del otro durante toda la Navidad. ¿Sobrevivirá su amor cuando sus mayores secretos comiencen a salir a la luz?</p>
             <input type="checkbox" id="prime-movie1" onclick="toggleCheck('prime-movie1')">
         </div>
@@ -54,22 +54,22 @@
         <div class="movie-item">
             <h2>ALGO DE TIFFANYS (también la vería). </h2>
             <p>La vida, como el amor, está llena de sorpresas y regalos inesperados. En la película romántica navideña Algo de Tiffany's, la vida de una mujer cambia para siempre por culpa de un anillo de compromiso destinado a otra persona.</p>
-            <input type="checkbox" id="prime-movie2" onclick="toggleCheck('prime-movie2')">
+            <input type="checkbox" id="prime-movie3" onclick="toggleCheck('prime-movie2')">
         </div>
         <div class="movie-item">
             <h2>SANTA CLAUS & CÍA (luce divertida para echar una siesta :p). </h2>
             <p>Llega la Navidad y Santa Claus se enfrenta a un completo desastre. Los noventa y dos mil elfos que trabajan con él en su misión de llevar los regalos a los niños de todo el mundo han enfermado simultáneamente. En busca de soluciones que le ayuden a preservar la magia de la Navidad, Santa Claus aterriza en pleno París. Su choque con el mundo moderno desencadena una imprevisible aventura.</p>
-            <input type="checkbox" id="prime-movie2" onclick="toggleCheck('prime-movie2')">
+            <input type="checkbox" id="prime-movie4" onclick="toggleCheck('prime-movie2')">
         </div>
         <div class="movie-item">
             <h2>A CASA POR NAVIDAD. </h2>
             <p>Nueva York, último viernes antes de Navidad y un temporal de nieve se acerca. La propietaria de un pequeño negocio local, Cara Hill, tiene una importante reunión en la ciudad con el director de su banco, mientras que el cantante de música country, Heath Sawyer, da un concierto en el Madison Square Garden.</p>
-            <input type="checkbox" id="prime-movie2" onclick="toggleCheck('prime-movie2')">
+            <input type="checkbox" id="prime-movie5" onclick="toggleCheck('prime-movie2')">
         </div>
         <div class="movie-item">
             <h2>10 HORAS PARA NAVIDAD. </h2>
             <p>Con padres divorciados, Julia, Miguel y Bia se acostumbraron a pasar la Navidad con una familia incompleta. Tras una tarea imprevista en el trabajo de su madre, deciden sorprender a sus padres con una cena de Navidad y, así, unirlos más. Tienen que lograr este objetivo en medio del caos de la temporada navideña, y terminan involucrando a su padre en esta misión navideña.</p>
-            <input type="checkbox" id="prime-movie2" onclick="toggleCheck('prime-movie2')">
+            <input type="checkbox" id="prime-movie6" onclick="toggleCheck('prime-movie2')">
         </div>
     </div>
     
@@ -81,7 +81,24 @@
             } else {
                 checkbox.parentElement.style.backgroundColor = ""; // Desmarca
             }
+            // Guardar el estado del checkbox en LocalStorage
+            localStorage.setItem(movieId, checkbox.checked);
         }
+        window.onload = function() {
+        // Para cada checkbox, verificamos si hay un estado guardado
+            const movieIds = ['prime-movie1', 'prime-movie2', 'prime-movie3', 'prime-movie4', 'prime-movie5', 'prime-movie6']; // Asegúrate de incluir todos los ID de las películas
+
+            movieIds.forEach(function(movieId) {
+            const checkbox = document.getElementById(movieId);
+            const isChecked = localStorage.getItem(movieId) === 'true';
+
+                // Establecer el estado del checkbox y el fondo
+                checkbox.checked = isChecked;
+                if (isChecked) {
+                    checkbox.parentElement.style.backgroundColor = "#d3ffd3"; // Marca como visto
+                }
+            });
+        };
     </script>
 </body>
 </html>
