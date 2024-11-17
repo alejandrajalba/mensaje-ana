@@ -71,7 +71,23 @@
             } else {
                 checkbox.parentElement.style.backgroundColor = ""; // Desmarca
             }
+            localStorage.setItem(movieId, checkbox.checked);
         }
+        window.onload = function() {
+            // Para cada checkbox, verificamos si hay un estado guardado
+            const movieIds = ['movie1', 'movie2', 'movie3', 'movie4']; // Asegúrate de incluir todos los ID de las películas
+    
+            movieIds.forEach(function(movieId) {
+                const checkbox = document.getElementById(movieId);
+                const isChecked = localStorage.getItem(movieId) === 'true';
+    
+                // Establecer el estado del checkbox y el fondo
+                checkbox.checked = isChecked;
+                if (isChecked) {
+                    checkbox.parentElement.style.backgroundColor = "#d3ffd3"; // Marca como visto
+                }
+            });
+        };
     </script>
 </body>
 </html>
